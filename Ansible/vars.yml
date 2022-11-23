@@ -4,7 +4,7 @@ server_name: dev2.snipeit.com
 
 #REPO
 
-repo: https://github.com/ravigfx/SnipeIT-IAC.git
+repo: https://github.com/ravigfx/SnipeIT-IAC
 repo_branch: devcontainer
 api_project_dir: /srv/SnipeIT-IAC
 api1_secret_name: smw        ## store the .env values in AWS secret manager as a json key pair values and mention the secret name.
