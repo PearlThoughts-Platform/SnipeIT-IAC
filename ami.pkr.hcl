@@ -22,9 +22,9 @@ packer {
     ami_virtualization_type       = "hvm"
     #role_arn                     = "arn:aws:iam::629974703195:user/terraform-user"           
     #access_key                    = "${var.aws-access-key-id}"
-    #region                       = "ap-southeast-1"
+    #region                       = "ap-southeast-2"
     #secret_key                    = "${var.aws-secret-access-key}"
-        #role_arn     = "arn:aws:iam::416991812294:role/s3jenkins"
+        #role_arn     = "arn:aws:iam::629974703195:user/terraform-user"
         #session_name = "SESSION_NAME"
         #external_id  = "EXTERNAL_ID"
     #}
@@ -48,8 +48,8 @@ packer {
     }
   
     # Profile Settings
-    region                        = "ap-southeast-1"
-    ami_regions                   = ["ap-southeast-1"]
+    region                        = "ap-southeast-2"
+    ami_regions                   = ["ap-southeast-2"]
   }
   
   build {
