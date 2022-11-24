@@ -60,7 +60,7 @@ packer {
     ]
   
     provisioner "ansible" {
-      playbook_file = "Ansible/main.yml"
+      playbook_file = "Ansible/main-ansible.yml"
       user = "ubuntu"
     }
   }
