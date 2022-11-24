@@ -42,6 +42,7 @@ jobs:
         env:
           TF_VAR_ec2_name: "${{ github.event.inputs.ec2-name }}"
         run: |
+          cd terra/
           rm -rf .terraform
           terraform init -upgrade=true -no-color -input=false
 
