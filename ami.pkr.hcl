@@ -16,7 +16,7 @@ packer {
     # AMI Settings
     ami_name                      = "SnipeIt_goldenAMI_${var.build_number}"
     instance_type                 = "t2.micro"
-    source_ami                    = "ami-07651f0c4c315a529"
+    source_ami                    = "ami-09a5c873bc79530d9"
     ssh_username                  = "ubuntu"
     associate_public_ip_address   = false
     ami_virtualization_type       = "hvm"
@@ -24,7 +24,7 @@ packer {
     #access_key                    = "${var.aws-access-key-id}"
     #region                       = "ap-southeast-2"
     #secret_key                    = "${var.aws-secret-access-key}"
-        #role_arn     = "arn:aws:iam::629974703195:user/terraform-user"  #new ami id
+        #role_arn     = "arn:aws:iam::629974703195:user/terraform-user"  #new role
         #session_name = "SESSION_NAME"
         #external_id  = "EXTERNAL_ID"
     #}
