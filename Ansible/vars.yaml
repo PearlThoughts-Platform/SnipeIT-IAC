@@ -1,13 +1,13 @@
 project_root_dir: /srv
-region: us-east-1
-server_name: dev2.snipeit.com
+region: ap-south-1
+server_name: dev-test.snipeit.com
 
 #REPO
 
-repo: https://github.com/PearlThoughts-Platform/Snipe-IT-GitHub-Actions
+repo: https://github.com/AkshayV30/Snipe-IT-GitHub-Actions
 repo_branch: devcontainer
 api_project_dir: /srv/Snipe-IT-GitHub-Actions
-api1_secret_name: smw        ## store the .env values in AWS secret manager as a json key pair values and mention the secret name.
+api1_secret_name: smw ## store the .env values in AWS secret manager as a json key pair values and mention the secret name.
 
 #apache
 http_conf: smm.conf
@@ -19,7 +19,7 @@ composer_version: 1.10.10
 
 packages:
     - apache2
-    - #nginx
+    -  #nginx
     - git
     - unzip
     - mysql-client
@@ -49,7 +49,6 @@ php_extensions:
     - wddx
     - opcache
     - ldap
-    
- 
+
 host_user: ubuntu
 group_name: deploy

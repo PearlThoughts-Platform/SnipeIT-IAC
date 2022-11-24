@@ -4,4 +4,3 @@ FROM alpine:3.13
 COPY --from=build /usr/bin/packer /usr/bin/packer
 RUN apk add ansible git py3-boto3
 RUN ansible-galaxy collection install amazon.aws
-RUN 

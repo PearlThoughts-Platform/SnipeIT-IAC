@@ -1,3 +1,6 @@
+
+
+
 packer {
     required_plugins {
       amazon = {
@@ -7,22 +10,20 @@ packer {
     }
   }
 
-  variable "build_number" {}
-  variable "commit_sha" {}
-  #variable "aws-access-key-id" {}
-  #variable "aws-secret-access-key" {}
-
-  source "amazon-ebs" "linux" {
+  
+  source "amazon-ebs" "ubuntu" {
     # AMI Settings
-    ami_name                      = "snipeitdev_goldenAMI_${var.build_number}"
-    instance_type                 = "c5.large"
-    source_ami                    = "ami-00978328f54e31526"
-    ssh_username                  = "ubuntu"
-    associate_public_ip_address   = false
+    ami_name                      = "snipeit-Pearl-AMI-${var.build_number}"
+    instance_type                 = "t2.micro"
+    region                        = "ap-south-1"
+    source_ami                    = "ami-08161112e301e70b4"
+    ssh_username                   = "ubuntu"
+    associate_public_ip_address   =  false
     ami_virtualization_type       = "hvm"
+
+
     #role_arn                     = "arn:aws:iam::416991812294:role/s3jenkins"           
     #access_key                    = "${var.aws-access-key-id}"
-    #region                       = "us-east-1"
     #secret_key                    = "${var.aws-secret-access-key}"
         #role_arn     = "arn:aws:iam::416991812294:role/s3jenkins"
         #session_name = "SESSION_NAME"
@@ -48,16 +49,35 @@ packer {
     }
   
     # Profile Settings
-    region                        = "us-east-2"
-    ami_regions                   = ["us-east-1"]
+    // region                        = "ap-south-1"
+    // ami_regions                   = ["ap-south-1"]
   }
   
   build {
-    sources = [
-      "source.amazon-ebs.linux"
+    name    = "Let's Snipe IT"
+    sources = [ 
+      "source.amazon-ebs.ubuntu"
     ]
+  
     provisioner "ansible" {
       playbook_file = "Ansible/main.yml"
       user = "ubuntu"
     }
   }
+
+
+// Variables
+variable "build_number" {}
+
+variable "commit_sha" {}
+
+// variable "aws_region" { 
+
+//     type = string
+//     default="ap-south-1"
+
+// }
+
+
+  #variable "aws-access-key-id" {}
+  #variable "aws-secret-access-key" {}

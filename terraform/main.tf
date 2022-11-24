@@ -1,3 +1,41 @@
+#
+# Terraform to deploy EC2.
+#
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.40.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options 
+  region     = "ap-south-1"
+  access_key = "secrets.AWS_ACCESS_KEY_ID"
+  secret_key = "secrets.AWS_SECRET_ACCESS_KEY"
+}
+
+#terraform init -backend-config="access_key=AKIAVQAUTHJP5DCWYAU4" -backend-config="secret_key=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"
+# Access-key-ID=AKIAVQAUTHJP5DCWYAU4
+# Secret-access-key=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
+
+
+
+# curl --location --request POST 'http://api.reworking-internal.com/employer/register' \
+# --header 'Accept: application/json' \
+# --header 'Authorization: Bearer null' \
+# --header 'Cookie: reworking_session=WvxpRlTGCphfW7keb6OPjL7fqjOCZGhNWAXjfeN9' \
+# --form 'name="admin"' \
+# --form 'email="admin@example.com"' \
+# --form 'password="password"' \
+# --form 'password_confirmation="password"' \
+# --form 'subdomain="employer"' \
+# --form 'company="employer inc"'
+
+
 #AMI DATA
 
 data "aws_ami" "api" {
@@ -14,14 +52,6 @@ data "aws_ami" "api" {
   }
 
 }
-
-
-output "ami_id" {
-  value = data.aws_ami.api.image_id
-}
-
-
-
 
 #IAM ROLE
 
@@ -68,10 +98,3 @@ resource "aws_instance" "api" {
 
 }
 
-
-#Elastic IP
-
-resource "aws_eip_association" "api" {
-  instance_id = aws_instance.api.id
-  public_ip   = aws_eip.api.public_ip
-}

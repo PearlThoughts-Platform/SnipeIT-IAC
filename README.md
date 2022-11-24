@@ -1,7 +1,5 @@
 # SMW-Packer-AMI
 
-
-
 ## STEPS for AMI  provisioning:
 
 ```bash

@@ -1,12 +1,12 @@
 variable "region" {
   type    = string
-  default = "us-east-1"
+  default = "ap-south-1"
 }
 
 variable "availability_zones" {
   type = list(string)
   default = [
-    "us-east-a", "us-east-1b", "us-east-1c"
+    "ap-south-1a", "ap-south-1b", "ap-south-1c"
   ]
 }
 
@@ -29,13 +29,13 @@ variable "domain_name" {
 
 variable "api_instance_type" {
   type    = string
-  default = "t3.large"
+  default = "t2.micro"
 }
 
 
 
 variable "api_instance_storage_size" {
-  default = 12
+  default = 16
 }
 
 
