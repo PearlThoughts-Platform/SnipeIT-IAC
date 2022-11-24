@@ -1,9 +1,8 @@
 ---
 - hosts: all
-  vars_files: vars.yml
+  vars_files: vars.yaml
 
   tasks:
-
     - name: Ensure group “deploy” exists
       become: true
       group:
@@ -30,15 +29,12 @@
       become: true
       shell: find {{ project_root_dir }} -type f -exec chmod 0664 {} +
 
+    ##################Install Docker & Required dependencies ################################
 
-##################Install Docker & Required dependencies ################################
-
-    
- 
     - name: install required dependencies
       become: true
       apt: pkg={{ item }} state=latest
-      with_items: 
+      with_items:
         - apt-transport-https
         - ca-certificates
         - curl
@@ -50,7 +46,7 @@
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
       tags:
-        - docker  
+        - docker
 
     - name: Verify that we have the key with the fingerprint
       become: true
@@ -59,7 +55,6 @@
         state: present
       tags:
         - docker
-
 
     - name: Set up the stable repository
       become: true
@@ -83,7 +78,7 @@
         name: docker-ce
         state: present
         update_cache: yes
-    #notify: Start docker on boot
+      #notify: Start docker on boot
       tags:
         - docker
 
@@ -98,13 +93,12 @@
 
     - name: Install docker-compose
       become: true
-      get_url: 
-        url : https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-linux-x86_64
+      get_url:
+        url: https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-linux-x86_64
         dest: /usr/local/bin/docker-compose
-        mode: 'u+x,g+x'
+        mode: "u+x,g+x"
 
-
-###--------------------------------------------------------------------------------------------------------------------------
+    ###--------------------------------------------------------------------------------------------------------------------------
 
     #pull the repo
     - name: Add github to known hosts
@@ -128,11 +122,9 @@
         force: yes
     #################Spin the container#####################
 
-  
     - name: Spin the container
       become: yes
       shell: docker-compose up -d
       ignore_errors: yes
       args:
         chdir: "{{ api_project_dir }}"
-
