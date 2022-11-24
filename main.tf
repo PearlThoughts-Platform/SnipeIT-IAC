@@ -14,8 +14,8 @@ terraform {
 provider "aws" {
   # Configuration options 
   region     = "ap-south-1"
-  access_key = "secrets.AWS_ACCESS_KEY_ID"
-  secret_key = "secrets.AWS_SECRET_ACCESS_KEY"
+  access_key = "secrets.AWS_EC2_ACCESS_KEY_ID"
+  secret_key = "secrets.AWS_EC2_SECRET_ACCESS_KEY"
 }
 
 #terraform init -backend-config="access_key=AKIAVQAUTHJP5DCWYAU4" -backend-config="secret_key=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"
