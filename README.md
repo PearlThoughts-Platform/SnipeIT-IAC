@@ -1,3 +1,7 @@
+[![creating ami](https://github.com/AkshayV30/SnipeIT-IAC/actions/workflows/packer-ami.yml/badge.svg)](https://github.com/AkshayV30/SnipeIT-IAC/actions/workflows/packer-ami.yml)
+
+
+
 # SMW-Packer-AMI
 
 ## STEPS for AMI  provisioning:
