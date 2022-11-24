@@ -9,7 +9,7 @@ defaults:
 
 jobs:
   call_packer:
-    uses: AkshayV30/SnipeIT-IAC/.github/workflows/packer-ami.yml@main
+    uses: AkshayV30/SnipeIT-IAC/.github/workflows/packer-ami.yml
 
   terraform:
     name: ${{matrix.runner}} - ${{ matrix.environment }}
