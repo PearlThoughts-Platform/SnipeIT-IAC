@@ -9,7 +9,6 @@ jobs:
   build_ami:
     #needs: [s3deploy]
     runs-on: ubuntu-20.04
-    environment: Development
     container: pearlthoughts/p2p-packer:latest
 
     steps:
@@ -32,6 +31,10 @@ jobs:
           aws-region: ap-south-1
 
       - name: Run in container
+        env:
+          # SSH_KEY: ${{ secrets.SSH_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_EC2_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_EC2_SECRET_ACCESS_KEY }}
         run: |
           repo_name=${{ github.event.repository.name }}
           git config --global --add safe.directory /__w/$repo_name/$repo_name
@@ -41,8 +44,3 @@ jobs:
           packer build packer\
           -var "build_number=$GITHUB_RUN_NUMBER" \
           -var "commit_sha=$git_hash"  .
-
-        # env:
-        #   SSH_KEY: ${{ secrets.SSH_KEY }}
-        #   # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
