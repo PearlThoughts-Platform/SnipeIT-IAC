@@ -14,7 +14,7 @@ packer {
 
   source "amazon-ebs" "linux" {
     # AMI Settings
-    ami_name                      = "snipeitdev_snipeITgoldenAMI_${var.build_number}"
+    ami_name                      = "snipeitdev_mysnipeITgoldenAMI_${var.build_number}"
     instance_type                 = "t2.micro"
     source_ami                    = "ami-062df10d14676e201"
     ssh_username                  = "ubuntu"
