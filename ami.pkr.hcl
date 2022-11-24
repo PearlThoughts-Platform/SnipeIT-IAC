@@ -16,7 +16,7 @@ packer {
     # AMI Settings
     ami_name                      = "snipeit_goldenAMI_${var.build_number}"
     instance_type                 = "t2.micro"
-    source_ami                    = "ami-08c40ec9ead489470"
+    source_ami                    = "ami-0f69dd1d0d03ad669"
     ssh_username                  = "ubuntu"
     associate_public_ip_address   = false
     ami_virtualization_type       = "hvm"
