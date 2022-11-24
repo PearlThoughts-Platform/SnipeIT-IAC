@@ -16,7 +16,7 @@ packer {
     ami_name                      = "snipeit-Pearl-AMI-${var.build_number}"
     instance_type                 = "t2.micro"
     region                        = "ap-south-1"
-    source_ami                    = "ami-08161112e301e70b4"
+    source_ami                    = "ami-024c319d5d14b463e"
     ssh_username                   = "ubuntu"
     associate_public_ip_address   =  false
     ami_virtualization_type       = "hvm"
