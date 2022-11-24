@@ -3,7 +3,7 @@ name: creating ami
 
 on:
   # push:
-  workflow_dispatch:
+  workflow_dispatch: #change it as per need
 
 jobs:
   build_ami:
