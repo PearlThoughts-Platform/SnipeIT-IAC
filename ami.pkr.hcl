@@ -24,7 +24,7 @@ packer {
     #access_key                    = "${var.aws-access-key-id}"
     #region                       = "ap-southeast-2"
     #secret_key                    = "${var.aws-secret-access-key}"
-        #role_arn     = "arn:aws:iam::629974703195:user/terraform-user"
+        #role_arn     = "arn:aws:iam::629974703195:user/terraform-user"  #new ami id
         #session_name = "SESSION_NAME"
         #external_id  = "EXTERNAL_ID"
     #}
