@@ -2,8 +2,8 @@
 name: creating ami
 
 on:
-  push:
-  # workflow_dispatch:
+  # push:
+  workflow_dispatch:
 
 jobs:
   build_ami:
