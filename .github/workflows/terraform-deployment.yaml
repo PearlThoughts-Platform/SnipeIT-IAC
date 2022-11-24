@@ -8,9 +8,9 @@ defaults:
     shell: bash
 
 jobs:
-  call_packer:
-    name: calling packer ami
-    uses: SnipeIT-IAC/.github/workflows/packer-ami.yml
+  # call_packer:
+  #   name: calling packer ami
+  #   uses: SnipeIT-IAC/.github/workflows/packer-ami.yml
 
   terraform:
     name: ${{matrix.runner}} - ${{ matrix.environment }}
