@@ -20,7 +20,7 @@ packer {
     ssh_username                  = "ubuntu"
     associate_public_ip_address   = false
     ami_virtualization_type       = "hvm"
-    #role_arn                     = "arn:aws:iam::416991812294:role/s3jenkins"           
+    #role_arn                     = "arn:aws:iam::629974703195:user/terraform-user"           
     #access_key                    = "${var.aws-access-key-id}"
     #region                       = "ap-southeast-1"
     #secret_key                    = "${var.aws-secret-access-key}"
