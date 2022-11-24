@@ -39,10 +39,12 @@ jobs:
 
       - name: Terraform Init
         id: init
-        env:
-          TF_VAR_ec2_name: "${{ github.event.inputs.ec2-name }}"
+        # env:
+        #   TF_VAR_ec2_name: "${{ github.event.inputs.ec2-name }}"
         run: |
-          cd terra/
+          pwd
+          cd terra
+          pwd
           rm -rf .terraform
           terraform init -upgrade=true -no-color -input=false
 
