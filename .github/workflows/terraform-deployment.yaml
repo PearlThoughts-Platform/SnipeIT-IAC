@@ -9,6 +9,7 @@ defaults:
 
 jobs:
   call_packer:
+    name: calling packer ami
     uses: AkshayV30/SnipeIT-IAC/.github/workflows/packer-ami.yml
 
   terraform:
