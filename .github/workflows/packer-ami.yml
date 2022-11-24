@@ -9,6 +9,7 @@ jobs:
   build_ami:
     #needs: [s3deploy]
     runs-on: ubuntu-20.04
+    environment: Development
     container: pearlthoughts/p2p-packer:latest
 
     steps:
