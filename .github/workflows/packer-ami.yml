@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Approval
         uses: trstringer/manual-approval@v1.8.0
-        timeout-minutes: 10
+        # timeout-minutes: 10
         with:
           secret: ${{ github.GIT_TOKEN }}
           approvers: AkshayV30
