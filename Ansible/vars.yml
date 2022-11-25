@@ -1,5 +1,5 @@
 project_root_dir: /srv
-region: ap-southeast-2  #changed region
+region: ap-southeast-1  #changed region
 server_name: dev2.snipeit.com
 
 #REPO
