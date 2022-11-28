@@ -14,9 +14,9 @@ packer {
 
   source "amazon-ebs" "linux" {
     # AMI Settings
-    ami_name                      = "snipeitdev_goldenAMI_${var.build_number}"
-    instance_type                 = "c5.large"
-    source_ami                    = "ami-00978328f54e31526"
+    ami_name                      = "Shahed-Madni-goldenAMI_${var.build_number}"
+    instance_type                 = "t2.micro"
+    source_ami                    = "ami-08c40ec9ead489470"
     ssh_username                  = "ubuntu"
     associate_public_ip_address   = false
     ami_virtualization_type       = "hvm"
@@ -48,7 +48,7 @@ packer {
     }
   
     # Profile Settings
-    region                        = "us-east-2"
+    region                        = "us-east-1"
     ami_regions                   = ["us-east-1"]
   }
   
