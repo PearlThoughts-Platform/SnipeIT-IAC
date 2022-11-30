@@ -40,13 +40,12 @@
               "ec2:ModifyInstanceAttribute",
               "ec2:ModifySnapshotAttribute",
               "ec2:RunInstances",
-              "ec2:StopInstances",
               "ec2:TerminateInstances"
           ],
           "Resource": "*",
           "Condition": {
               "StringEquals": {
-                  "aws:RequestedRegion": "us-east-2"
+                  "aws:RequestedRegion": "ap-south-1"
               }
           }
       },
