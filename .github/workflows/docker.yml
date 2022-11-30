@@ -28,9 +28,6 @@ jobs:
           packer build \
           -var "build_number=$GITHUB_RUN_NUMBER" \
           -var "commit_sha=$git_hash"  .
-
-          
-          
           
         name: Run in container
         env:
