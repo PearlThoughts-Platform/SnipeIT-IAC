@@ -1,9 +1,6 @@
 name: "Terraform Deployment"
 on: 
-   workflow_dispatch
-defaults:
-  run:
-    shell: bash
+  workflow_dispatch
 jobs:
   terraform:
     name:   ${{matrix.runner}} - ${{ matrix.environment }}
