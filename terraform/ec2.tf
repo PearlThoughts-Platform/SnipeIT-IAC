@@ -2,7 +2,7 @@
 
 data "aws_ami" "api" {
   most_recent = true
-  owners      = ["self"]
+  owners      = ["self"]  #self hosted
 
   filter {
     name   = "tag:server"
