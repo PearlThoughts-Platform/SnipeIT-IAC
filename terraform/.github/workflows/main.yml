@@ -1,12 +1,6 @@
 name: "Terraform Deployment"
-on:
-  # Manual trigger
-  workflow_dispatch:
-  push:
-    paths:
-      - '*/**'
-  pull_request:
-    branches: [ main ]
+on: 
+   workflow_dispatch
 defaults:
   run:
     shell: bash
