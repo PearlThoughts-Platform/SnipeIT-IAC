@@ -1,5 +1,9 @@
 name: "Terraform Deployment"
-on: push
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   terraform:
     name:   ${{matrix.runner}} - ${{ matrix.environment }}
