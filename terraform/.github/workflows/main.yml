@@ -1,6 +1,5 @@
 name: "Terraform Deployment"
-on: 
-  workflow_dispatch
+on: push
 jobs:
   terraform:
     name:   ${{matrix.runner}} - ${{ matrix.environment }}
