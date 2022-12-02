@@ -20,4 +20,4 @@ jobs:
         script: |
           whoami
           cd /srv/
-          mkdir selfhosted
+          ls -lrt
