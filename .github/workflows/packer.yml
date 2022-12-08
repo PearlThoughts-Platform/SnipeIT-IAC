@@ -3,7 +3,7 @@ on: push
 
 jobs:
   container:
-    ##needs: [s3deploy]
+    #needs: [s3deploy]
     #runs-on: ubuntu-18.04
     runs-on: self-hosted
     container: pearlthoughts/p2p-packer:latest
