@@ -1,12 +1,12 @@
 project_root_dir: /srv
-region: us-east-1
+region: ap-southeast-1  #changed region
 server_name: dev2.snipeit.com
 
 #REPO
 
-repo: https://github.com/PearlThoughts-Platform/Snipe-IT-GitHub-Actions
-repo_branch: devcontainer
-api_project_dir: /srv/Snipe-IT-GitHub-Actions
+repo: https://github.com/azharism/SnipeIT-IAC.git
+repo_branch: main
+api_project_dir: /srv/SnipeIT-IAC
 api1_secret_name: smw        ## store the .env values in AWS secret manager as a json key pair values and mention the secret name.
 
 #apache
